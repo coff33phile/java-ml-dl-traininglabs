@@ -13,9 +13,30 @@ import java.util.logging.SimpleFormatter;
 public class TrainingLogger {
 
     private static Logger log;
+    private static String className;
+    private static String trainLogsDir;
 
-    public static Logger loggerSetup(String className, String trainLogsFolderDirectory) throws IOException {
+    public static Logger loggerSetup(String currentClassName, String trainLogsFolderDirectory) throws IOException {
+        className = currentClassName;
+        //user specify path
+        trainLogsDir = trainLogsFolderDirectory;
 
+        log = logging();
+
+        return log;
+    }
+
+    public static Logger loggerSetup(String currentClassName) throws IOException {
+        className = currentClassName;
+        //default path is Desktop
+        trainLogsDir = Paths.get(System.getProperty("user.home"),"\\Desktop\\IntelliJ Training Logs").toString();
+
+        log = logging();
+
+        return log;
+    }
+
+    private static Logger logging() throws IOException {
         //setup the logger with class name, later return this
         log = Logger.getLogger(className);
 
@@ -24,7 +45,7 @@ public class TrainingLogger {
         String dateAndTime = format.format(Calendar.getInstance().getTime());
 
         //get path to create a folder in preferred directory
-        Path newFolderPath = Paths.get(trainLogsFolderDirectory,"\\","TrainingLogs_"+dateAndTime);
+        Path newFolderPath = Paths.get(trainLogsDir,"\\","TrainingLogs_"+dateAndTime);
 
         //setup path with folder name
         Path logsPath = Paths.get(newFolderPath.toString(),className+"_"+dateAndTime+".log");

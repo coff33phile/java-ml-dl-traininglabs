@@ -63,7 +63,7 @@ public class HeartStudyPrediction {
 
     public static void main(String[] args) throws Exception, IOException {
 
-        log = TrainingLogger.loggerSetup(HeartStudyPrediction.class.getName(),"C:\\Users\\user\\Desktop\\IntelliJ Training Logs");
+        log = TrainingLogger.loggerSetup(HeartStudyPrediction.class.getName());
 
         String inputFile = new ClassPathResource("heart/heart-disease-data.csv").getFile().getAbsolutePath();
         RecordReader rr = new CSVRecordReader(1, ',');
@@ -258,20 +258,20 @@ public class HeartStudyPrediction {
 
         log.info("\n******************** TOTAL TIME TAKEN: " + (timeY - timeX) + "ms ******************************\n");
 
-        // Print out target values and predicted values
-        log.info("\n*************************************** PREDICTION **********************************************");
-
-        INDArray targetLabels = test.getLabels();
-        System.out.println("\nTarget shape: " + targetLabels.shapeInfoToString());
-
-        INDArray predictions = model.output(testIter);
-        System.out.println("\nPredictions shape: " + predictions.shapeInfoToString() + "\n");
-
-        System.out.println("Target \t\t\t Predicted");
-
-        for (int i = 0; i < 20; i++) {
-            System.out.println(targetLabels.getRow(i) + "\t\t" + predictions.getRow(i));
-        }
+//        // Print out target values and predicted values
+//        log.info("\n*************************************** PREDICTION **********************************************");
+//
+//        INDArray targetLabels = test.getLabels();
+//        System.out.println("\nTarget shape: " + targetLabels.shapeInfoToString());
+//
+//        INDArray predictions = model.output(testIter);
+//        System.out.println("\nPredictions shape: " + predictions.shapeInfoToString() + "\n");
+//
+//        System.out.println("Target \t\t\t Predicted");
+//
+//        for (int i = 0; i < 20; i++) {
+//            System.out.println(targetLabels.getRow(i) + "\t\t" + predictions.getRow(i));
+//        }
 
         // Print out model summary
         log.info("\n*************************************** MODEL SUMMARY *******************************************");

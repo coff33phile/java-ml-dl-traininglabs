@@ -72,7 +72,7 @@ public class HeartStudyPrediction {
 
     public static void main(String[] args) throws Exception, IOException {
 
-        log = TrainingLogger.loggerSetup(HeartStudyPrediction.class.getName(),"C:\\Users\\user\\Desktop\\IntelliJ Training Logs");
+        log = TrainingLogger.loggerSetup(HeartStudyPrediction.class.getName());
 
         String inputFile = new ClassPathResource("heart/heart-disease-data.csv").getFile().getAbsolutePath();
         RecordReader rr = new CSVRecordReader(1, ',');

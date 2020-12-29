@@ -1,5 +1,6 @@
 package skymind.edugroup.solution.csv.heart_disease;
 
+import org.nd4j.linalg.dataset.ViewIterator;
 import skymind.edugroup.utilities.TrainingLogger;
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
@@ -55,12 +56,10 @@ public class HeartStudyPrediction {
 
     public static final long seed = 123456;
     private static int batchSize = 64;
-    private static int label = 15;
-    private static int input = 10;
     private static int hidden = 50;
     private static int output = 2;
     private static double lr = 0.0015;
-    private static int epoch = 5;
+    private static int epoch = 1;
 
 
     public static void main(String[] args) throws Exception, IOException {
@@ -119,8 +118,8 @@ public class HeartStudyPrediction {
         List<List<Writable>> transformed = LocalTransformExecutor.execute(originalData, tp);
         System.out.println(tp.getInitialSchema());
         System.out.println(tp.getFinalSchema());
-        System.out.println(originalData.size());
-        System.out.println(transformed.size());
+        System.out.println("Original Size: "+originalData.size());
+        System.out.println("Transformed Size: "+transformed.size());
 
         RecordReader crr = new CollectionRecordReader(transformed);
         RecordReaderDataSetIterator iter = new RecordReaderDataSetIterator(crr, transformed.size(), 15,2);
@@ -146,56 +145,10 @@ public class HeartStudyPrediction {
 
         System.out.println("Labels shape: " + trainFeatures.shapeInfoToString() + "\n");
 
-        double[][] featuresMat = trainFeatures.toDoubleMatrix();
-
-        List<Writable> label_collection = new ArrayList<>();
-        for (int i = 0; i < trainLabels.size(0); i++) {
-            label_collection.add(transformed.get(i).get(15));
-        }
-
-        INDArray label_ind = RecordConverter.toArray(label_collection);
-        int[] label_vector = label_ind.toIntVector();
-
         // Assigning dataset iterator for training purpose
-//        ViewIterator trainIter = new ViewIterator(train, batchSize);
-//        ViewIterator testIter = new ViewIterator(test, batchSize);
-//        train(trainIter, testIter, test);
-
-        KNN<double[]> knn = KNN.fit(featuresMat, label_vector, 3);
-        int[] pred = new int[featuresMat.length];
-        for (int i = 0; i < featuresMat.length; i++) {
-            pred[i] = knn.predict(featuresMat[i]);
-        }
-
-//        Classifier<double[]> svm = SVM.fit(featuresMat, label_vector, 0.1, 0.1);
-//        int[] pred = new int[featuresMat.length];
-//        for (int i = 0; i < featuresMat.length; i++) {
-//            pred[i] = svm.predict(featuresMat[i]);
-//        }
-
-//        LogisticRegression logisticReg = LogisticRegression.Binomial.fit(featuresMat, label_vector);
-//        int[] pred = new int[featuresMat.length];
-//        for (int i = 0; i < featuresMat.length; i++) {
-//            pred[i] = logisticReg.predict(featuresMat[i]);
-//        }
-
-        double acc = Accuracy.of(label_vector, pred);
-        System.out.println("Accuracy: "+acc);
-        double recall = Recall.of(label_vector, pred);
-        System.out.println("Recall: "+recall);
-        double prec = Precision.of(label_vector, pred);
-        System.out.println("Precision: "+prec);
-        double f1 = FScore.of(1,label_vector, pred);
-        System.out.println("F1: "+f1);
-
-        ConfusionMatrix confusionMat = ConfusionMatrix.of(label_vector, pred);
-        System.out.println("Confusion Matrix: "+confusionMat);
-
-
-//        INDArray predMat = Nd4j.create(pred);
-//        INDArray error = label_ind.subi(predMat);
-//        Number totalErr = error.sumNumber();
-//        System.out.println(totalErr);
+        ViewIterator trainIter = new ViewIterator(train, batchSize);
+        ViewIterator testIter = new ViewIterator(test, batchSize);
+        train(trainIter, testIter, test);
 
         log.info("********************* END ****************************");
     }
