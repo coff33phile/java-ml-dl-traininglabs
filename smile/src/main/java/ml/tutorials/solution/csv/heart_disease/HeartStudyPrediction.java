@@ -1,4 +1,4 @@
-package skymind.edugroup.solution.csv.heart_disease;
+package ml.tutorials.solution.csv.heart_disease;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;

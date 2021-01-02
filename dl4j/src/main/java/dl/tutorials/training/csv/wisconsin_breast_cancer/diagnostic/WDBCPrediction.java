@@ -1,4 +1,4 @@
-package skymind.edugroup.training.csv.wisconsin_breast_cancer.diagnostic;
+package dl.tutorials.training.csv.wisconsin_breast_cancer.diagnostic;
 
 import java.io.IOException;
 

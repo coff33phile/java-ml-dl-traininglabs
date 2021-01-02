@@ -1,4 +1,4 @@
-package skymind.edugroup.solution.csv.heart_disease;
+package dl.tutorials.solution.csv.heart_disease;
 
 import org.nd4j.linalg.dataset.ViewIterator;
 import skymind.edugroup.utilities.TrainingLogger;

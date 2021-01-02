@@ -1,4 +1,4 @@
-package skymind.edugroup.training.csv.heart_disease;
+package dl.tutorials.training.csv.heart_disease;
 
 import skymind.edugroup.utilities.TrainingLogger;
 import org.datavec.api.records.reader.RecordReader;

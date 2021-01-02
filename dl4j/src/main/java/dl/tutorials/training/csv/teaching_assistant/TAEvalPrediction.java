@@ -1,4 +1,4 @@
-package skymind.edugroup.training.csv.teaching_assistant;
+package dl.tutorials.training.csv.teaching_assistant;
 
 import java.io.IOException;
 

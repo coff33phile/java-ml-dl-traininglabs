@@ -1,4 +1,4 @@
-package skymind.edugroup.solution.csv.wisconsin_breast_cancer.original;
+package dl.tutorials.solution.csv.wisconsin_breast_cancer.original;
 
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;

@@ -1,4 +1,4 @@
-package skymind.edugroup.training.csv.facebook;
+package dl.tutorials.training.csv.facebook;
 
 import java.io.IOException;
 

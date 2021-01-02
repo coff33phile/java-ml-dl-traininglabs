@@ -1,4 +1,4 @@
-package skymind.edugroup.solution.csv.facebook;
+package dl.tutorials.solution.csv.facebook;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
