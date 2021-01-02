@@ -91,6 +91,7 @@ public class IrisKFoldPrediction {
             //training
             for (int i = 0; i < epoch; i++) {
                 model.fit(new ViewIterator(trainSet, trainSet.numExamples()));
+                //must supply an iterator if want to use getEpochCount() and getLearningRate()
                 log.info("Epoch "+ model.getEpochCount() +" learning rate: "+model.getLearningRate(0));
             }
 
@@ -110,6 +111,7 @@ public class IrisKFoldPrediction {
                 bestModel = model;
             }
 
+            //update counter
             currBatch = currBatch+ 1;
         }
 
@@ -127,6 +129,7 @@ public class IrisKFoldPrediction {
 
     private static MultiLayerConfiguration getConf(int numInput, int numOutput, double lr) {
 
+        //write a learning rate scheduler
         HashMap<Integer, Double> schedule = new HashMap<>();
         schedule.put(0, lr);
         schedule.put(2, lr/2);
@@ -135,6 +138,7 @@ public class IrisKFoldPrediction {
         schedule.put(7, lr/16);
         schedule.put(8, lr/32);
 
+        //return a network config
         return new NeuralNetConfiguration.Builder()
                 .seed(1234)
                 .updater(new Adam(new MapSchedule(ScheduleType.EPOCH, schedule)))
