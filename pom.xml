@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ~ Copyright (c) 2020 Konduit K.K.
-  ~ Copyright (c) 2015-2019 Skymind, Inc.
+  ~ Copyright (c) 2020-2021 Yuen Hern Yu.
   ~
   ~ This program and the accompanying materials are made available under the
   ~ terms of the Apache License, Version 2.0 which is available at
@@ -22,11 +21,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Group-ID, artifact ID and version of the project. You can modify these as you want -->
-    <groupId>ai.certifai</groupId>
-    <artifactId>traininglabs</artifactId>
+    <groupId>com.github</groupId>
+    <artifactId>java-ml-dl-traininglabs</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-alpha</version>
 
+    <name>JavaMLDL TrainingLabs</name>
+    <description>Tutorial exercises for ML and DL in Java using SMILE and DL4J framework</description>
     <!-- Properties Section. Change ND4J versions here, if required -->
     <properties>
         <logback.version>1.2.3</logback.version>
@@ -38,15 +39,16 @@
         <shadedClassifier>bin</shadedClassifier>
 
         <java.version>1.8</java.version>
-        <nd4j.version>1.0.0-beta6</nd4j.version>
-        <dl4j.version>1.0.0-beta6</dl4j.version>
-        <datavec.version>1.0.0-beta6</datavec.version>
+        <nd4j.version>1.0.0-beta7</nd4j.version>
+        <dl4j.version>1.0.0-beta7</dl4j.version>
+        <datavec.version>1.0.0-beta7</datavec.version>
 
         <javacv.version>1.5.2</javacv.version>
         <ffmpeg.version>3.2.1-1.3</ffmpeg.version>
         <zip4j.version>2.2.6</zip4j.version>
         <slf4j.version>2.0.0-alpha1</slf4j.version>
         <httpclient.version>4.5.12</httpclient.version>
+        <smile.version>2.6.0</smile.version>
 
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
@@ -56,8 +58,8 @@
     </properties>
 
     <modules>
-        <module>dl4j</module>
-        <module>smile</module>
+        <module>dl4j-labs</module>
+        <module>smile-labs</module>
     </modules>
 
     <!-- Maven Enforcer: Ensures user has an up to date version of Maven before building -->
