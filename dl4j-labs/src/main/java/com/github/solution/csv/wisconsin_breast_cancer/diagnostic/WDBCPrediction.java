@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.wisconsin_breast_cancer.diagnostic;
+package com.github.solution.csv.wisconsin_breast_cancer.diagnostic;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;

@@ -1,6 +1,6 @@
 package com.github.solution.csv.abalone;
 
-import dl.tutorials.utilities.TrainingLogger;
+import com.github.utilities.TrainingLogger;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
 import org.datavec.api.records.reader.impl.transform.TransformProcessRecordReader;
 import org.datavec.api.split.FileSplit;

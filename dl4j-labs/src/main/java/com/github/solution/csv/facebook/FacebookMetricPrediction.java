@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.facebook;
+package com.github.solution.csv.facebook;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;

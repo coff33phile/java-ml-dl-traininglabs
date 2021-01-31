@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.teaching_assistant;
+package com.github.solution.csv.teaching_assistant;
 
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;

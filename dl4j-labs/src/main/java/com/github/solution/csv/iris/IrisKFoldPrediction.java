@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.iris;
+package com.github.solution.csv.iris;
 
 import org.deeplearning4j.datasets.iterator.impl.IrisDataSetIterator;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
@@ -23,7 +23,7 @@ import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.nd4j.linalg.schedule.MapSchedule;
 import org.nd4j.linalg.schedule.ScheduleType;
-import dl.tutorials.utilities.TrainingLogger;
+import com.github.utilities.TrainingLogger;
 
 import java.io.IOException;
 import java.util.*;

@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.wisconsin_breast_cancer.prognostic;
+package com.github.solution.csv.wisconsin_breast_cancer.prognostic;
 
 import dl.tutorials.utilities.TrainingLogger;
 import org.datavec.api.records.reader.RecordReader;

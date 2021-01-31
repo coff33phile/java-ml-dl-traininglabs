@@ -1,6 +1,6 @@
-package dl.tutorials.solution.csv.heart_disease;
+package com.github.solution.csv.heart_disease;
 
-import dl.tutorials.utilities.TrainingLogger;
+import com.github.utilities.TrainingLogger;
 import org.deeplearning4j.core.storage.StatsStorage;
 import org.deeplearning4j.ui.model.stats.StatsListener;
 import org.deeplearning4j.ui.model.storage.InMemoryStatsStorage;

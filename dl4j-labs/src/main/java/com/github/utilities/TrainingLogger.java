@@ -1,4 +1,4 @@
-package dl.tutorials.utilities;
+package com.github.utilities;
 
 import java.io.IOException;
 import java.nio.file.Files;

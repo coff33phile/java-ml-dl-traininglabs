@@ -1,4 +1,4 @@
-package dl.tutorials.solution.csv.wisconsin_breast_cancer.original;
+package com.github.solution.csv.wisconsin_breast_cancer.original;
 
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
@@ -33,7 +33,7 @@ import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.nd4j.linalg.schedule.ScheduleType;
 import org.nd4j.linalg.schedule.StepSchedule;
-import dl.tutorials.utilities.TrainingLogger;
+import com.github.utilities.TrainingLogger;
 
 import java.io.File;
 import java.io.IOException;
