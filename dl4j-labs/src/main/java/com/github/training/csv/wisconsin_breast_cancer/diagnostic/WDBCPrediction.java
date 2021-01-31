@@ -1,4 +1,4 @@
-package dl.tutorials.training.csv.wisconsin_breast_cancer.diagnostic;
+package com.github.training.csv.wisconsin_breast_cancer.diagnostic;
 
 import java.io.IOException;
 

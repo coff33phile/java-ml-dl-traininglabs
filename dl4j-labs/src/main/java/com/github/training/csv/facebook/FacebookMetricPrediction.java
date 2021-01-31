@@ -1,4 +1,4 @@
-package dl.tutorials.training.csv.facebook;
+package com.github.training.csv.facebook;
 
 import java.io.IOException;
 

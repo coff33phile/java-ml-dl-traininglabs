@@ -1,6 +1,6 @@
-package dl.tutorials.training.csv.heart_disease;
+package com.github.training.csv.heart_disease;
 
-import dl.tutorials.utilities.TrainingLogger;
+import com.github.utilities.TrainingLogger;
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.collection.CollectionRecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;

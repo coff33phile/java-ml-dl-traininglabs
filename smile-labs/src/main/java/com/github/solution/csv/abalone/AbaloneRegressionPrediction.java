@@ -7,8 +7,14 @@ import org.datavec.api.split.FileSplit;
 import org.datavec.api.transform.TransformProcess;
 import org.datavec.api.transform.filter.FilterInvalidValues;
 import org.datavec.api.transform.schema.Schema;
+import org.datavec.api.util.ndarray.RecordConverter;
 import org.datavec.api.writable.Writable;
 import org.nd4j.common.io.ClassPathResource;
+import org.nd4j.linalg.api.ndarray.INDArray;
+import smile.classification.LogisticRegression;
+import smile.data.formula.Formula;
+import smile.data.formula.Term;
+import smile.regression.OLS;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,6 +52,10 @@ public class AbaloneRegressionPrediction {
         }
 
         log.info("Transformed data size: " + transformed.size());
+
+        RecordConverter.toMatrix(transformed).toDoubleMatrix();
+        OLS.fit(Formula.lhs("y"), )
+
 
     }
 

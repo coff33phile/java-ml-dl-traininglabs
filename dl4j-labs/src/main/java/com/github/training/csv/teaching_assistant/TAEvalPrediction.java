@@ -1,4 +1,4 @@
-package dl.tutorials.training.csv.teaching_assistant;
+package com.github.training.csv.teaching_assistant;
 
 import java.io.IOException;
 
